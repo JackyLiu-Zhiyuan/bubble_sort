@@ -1,0 +1,42 @@
+Bubble Sort:
+
+def bubblesort(list):
+    isSorted = False
+    temp = 0
+    while isSorted == False:
+        count = 0
+        for i in range(len(list)-1-temp):
+            if list[i] > list[i+1]:
+                swap(list, i, i+1)
+                isSorted = False
+                count += 1
+                print(list)
+        temp += 1
+        isSorted = True if count == 0 else False
+
+    return list
+
+def swap(array,i,j):
+    array[i],array[j] = array[j],array[i]
+
+print(bubblesort([8,5,2,9,5,6,3]))
+
+# bubble sort
+#
+# 8 5 2 9 5 6 3
+# 5 8 2 9 5 6 3
+# 5 2 8 9 5 6 3
+# 5 2 8 5 9 6 3
+# 5 2 8 5 6 9 3
+# 5 2 8 5 6 3 9
+# 2 5 8 5 6 3 9
+# 2 5 5 8 6 3 9
+# 2 5 5 6 8 3 9
+# 2 5 5 6 3 8 9
+# 2 5 5 3 6 8 9
+# 2 5 3 5 6 8 9
+# 2 3 5 5 6 8 9
+
+# 1 2 3 4 5 6 7 8 O(N)
+# 9 8 7 6 5 4 3 2 1 O(N*N)
+
